@@ -212,6 +212,40 @@ var add = function (firstName, lastName, email, phoneNumber) {
 add("Krust", "Tuna", "butts@butt.com", "(666) 666-6666");
 list();
 
+/*
+Write another for-in loop, but this time print the value of each property in nyc.
+*/
+
+var nyc = {
+fullName: "New York City",
+mayor: "Bill de Blasio",
+population: 8000000,
+boroughs: 5
+};
 
 
+for (var property in nyc) {
+console.log(nyc[property]);
+}
+
+
+/* Make your own class, Circle, by building a constructor for it. 
+The constructor for Circle should have one property, radius, and 
+take one argument for the initial radius.
+*/
+
+function Person(name,age) {
+this.name = name;
+this.age = age;
+}
+
+// Let's make bob again, using our constructor
+var bob = new Person("Bob Smith", 30);
+var susan = new Person("Susan Jordan", 35);
+
+// make your own class here
+function Circle(radius){
+this.radius = radius;
+};
+var round = new Circle(2);
 
