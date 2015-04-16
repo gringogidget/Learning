@@ -126,3 +126,27 @@ Penguin.prototype.sayName = function() {
 // our test code
 var theCaptain = new Penguin("Captain Cook", 2);
 theCaptain.sayName();
+
+//Create a new Penguin class. The constructor should take only the name parameter and within
+//the constructor itself, set this.numLegs to 2.
+
+// the original Animal class and sayName method
+function Animal(name, numLegs) {
+    this.name = name;
+    this.numLegs = numLegs;
+}
+Animal.prototype.sayName = function() {
+    console.log("Hi my name is " + this.name);
+};
+
+// define a Penguin class
+function Penguin(name) {
+    this.name = name;
+    this.numLegs = 2;
+}
+
+// set its prototype to be a new instance of Animal
+Penguin.prototype = new Animal();
+
+
+
