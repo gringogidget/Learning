@@ -148,5 +148,55 @@ function Penguin(name) {
 // set its prototype to be a new instance of Animal
 Penguin.prototype = new Animal();
 
+/******/
 
+// Create a Penguin object with the varible penguin and any name you'd like.
+//Call penguin.sayName();
+
+// the original Animal class and sayName method
+function Animal(name, numLegs) {
+this.name = name;
+this.numLegs = numLegs;
+}
+Animal.prototype.sayName = function() {
+console.log("Hi my name is " + this.name);
+};
+
+// define a Penguin class
+function Penguin(name) 
+{
+this.name = name; 
+this.numLegs = 2;
+}
+
+// set its prototype to be a new instance of Animal
+Penguin.prototype = new Animal();
+var penguin = new Penguin("claudia");
+penguin.sayName();
+
+/*****/
+
+//Create an Emperor class w a single name par. and sets name prp to be its value
+// Don't set a numLegs property.
+// Make Emperor inherit from Penguin by setting prototype of Emperor to Penguin
+// Create a new emperor object and use console.log to print the number of legs emperor has
+// (inherited from Penguin)
+
+function Penguin(name) {
+
+this.name = name;
+this.numLegs = 2;
+}
+
+// create your Emperor class here and make it inherit from Penguin
+function Emperor(name){
+
+this.name = name;
+}
+Emperor.prototype = new Penguin();
+
+// create an "emperor" object and print the number of legs it has
+var emperor = new Emperor("bob");
+
+console.log(emperor.numLegs);
 
