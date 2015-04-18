@@ -229,3 +229,6 @@ var myEmperor = new Emperor("Jules");
 console.log(myEmperor.saying); // should print "Waddle waddle"
 console.log(myEmperor.numLegs); // should print 2
 console.log(myEmperor.isAlive); // should print true
+
+
+// I did this from aprile's computer but she did not do this commit lol
