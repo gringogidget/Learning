@@ -56,7 +56,10 @@ give it 5px padding */
 }
 
 #left{
-	/*Add your CSS here!*/
+    
+/*test 03: Inside the #left selector, set float: left and width: 45% */   
+    float: left;
+	width: 45%;
 	
 }
 
@@ -66,7 +69,9 @@ p {
 }
 
 #right{
-	/*Add your CSS here!*/
+/*test 03: Inside the #right selector, set float: right and width: 45% */
+    float: right;
+    width: 45%;
 	
 }
 
@@ -106,7 +111,7 @@ th {
 }
 
 #footer{
-	/*Add your CSS here!*/
+/* test03: Inside the #footer selector, set clear: both */
 	
 	position: relative;
 	bottom: -20px;
@@ -114,6 +119,8 @@ th {
 	border-bottom-right-radius: 15px;
 	height: 75px;
 	background-color: #3c4543;
+	clear: both;
+
 }
 
 #button{
