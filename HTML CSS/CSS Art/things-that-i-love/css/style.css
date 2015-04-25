@@ -5,7 +5,7 @@ body {
 .pizza {
   position: absolute;
   top: 50px;
-  left: 0px;
+  left: -50px;
 }
 
 .pizzaCrust {
@@ -250,13 +250,196 @@ body {
   background: #0D8BD9;
 }
 
-.mug {
+.coffee {
+  
+}
+
+.handleCoffee01 {
   position: absolute;
   top: 50px;
-  left: 160px;
+  left: 230px;
+  width: 100px;
+  height: 110px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: #0D8BD9;
+}
+
+.handleCoffee02 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: 90px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: #000;
+}
+
+.mug {
+  position: absolute;
+  top: -30px;
+  left: -70px;
   width: 125px;
   height: 150px;
   border-radius: 10px;
   background: #0D8BD9;
 }
 
+.steam01 {
+  position: absolute;
+  top: -90px;
+  left: 25px;
+  width: 55px;
+  height: 75px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: #F2E52E;
+}
+
+.steam02 {
+  position: absolute;
+  top: -10px;
+  left: -15px;
+  width: 50px;
+  height: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: #F2E52E;
+}
+
+.steam03 {
+  position: absolute;
+  top: 40px;
+  left: 45px;
+  width: 50px;
+  height: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: #F2E52E;
+}
+
+.donut01 {
+  position: absolute;
+  top: 30px;
+  left: 200px;
+  width: 200px;
+  height: 200px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  background: #F27405;
+}
+
+.donut02 {
+  position: absolute;
+  top: 65px;
+  left: 60px;
+  width: 75px;
+  height: 75px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  background: #000;
+}
+
+.sprinkles01 {
+  position: absolute;
+  top: -10px;
+  left: 60px;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  background: #22F2F2;
+}
+
+.sprinkles02 {
+  position: absolute;
+  top: 110px;
+  left: 30px;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  background: #22F2F2;
+}
+
+.sprinkles03 {
+  position: absolute;
+  top: 10px;
+  left: -90px;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  background: #F24182;
+}
+
+.sprinkles04 {
+  position: absolute;
+  top: -90px;
+  left: 90px;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  background: #F24182;
+}
+
+.sprinkles05 {
+  position: absolute;
+  top: 60px;
+  left: -90px;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  background: #F2E52E;
+}
+
+.sprinkles06 {
+  position: absolute;
+  top: -110px;
+  left: -10px;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  background: #F2E52E;
+}
+
+.sprinkles07 {
+  position: absolute;
+  top: 60px;
+  left: -10px;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  background: #0D8BD9;
+}
+
+.sprinkles08 {
+  position: absolute;
+  top: 0px;
+  left: 130px;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  background: #0D8BD9;
+}
