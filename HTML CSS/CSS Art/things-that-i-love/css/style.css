@@ -4,10 +4,18 @@ html, body {
 
 /* Selecting all art elements on the page */
 body div {
+  /* Inline-block allows the art-items to be side by side inline */
   display: inline-block;
-  position: relative;
+  
+  /* Because all components of each art item have closing tags now,
+  *  the parent of each component is the art item rather than the
+  *  div before it. This means each component (e.g. crust, cheese etc.)
+  *  is now positioned (top: x; left: x; etc) according the dimensions
+  *  of the art item. A.k.a, you could apply 'right: 50px' and it
+  *  would apply 50px from the right of the art item-
+  *  -element (e.g. '.pizza'.)
+  */
   width: 400px;
-  height: 100%;
 }
 
 .pizza {
