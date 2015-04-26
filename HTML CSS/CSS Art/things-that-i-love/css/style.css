@@ -1,5 +1,8 @@
 html, body {
   background-color: #000000;
+  overflow-x: scroll;
+  height: 100%;
+  white-space: nowrap;
 }
 
 /* Selecting all art elements on the page */
@@ -16,7 +19,7 @@ body div {
   *  -element (e.g. '.pizza'.)
   */
   position: relative;
-  width: 400px;
+  width: 300px;
 }
 
 .pizza {
