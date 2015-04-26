@@ -81,15 +81,10 @@ body div {
   border-radius: 50px;
 }
 
-.beer {
-  position: absolute;
-  top: 25px;
-}
-
 .glass01 {
   position: absolute;
-  top: -99px;
-  left: 250px;
+  top: 173px;
+  left: 54px;
   width: 100px;
   height: 200px;
   background: #22F2F2;
@@ -97,8 +92,8 @@ body div {
 
 .glass02 {
   position: absolute;
-  top: -25px;
-  left: -0px;
+  top: 150px;
+  left: 54px;
   width: 100px;
   height: 50px;
   -moz-border-radius: 100px / 50px;
@@ -109,8 +104,8 @@ body div {
 
 .handle01 {
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 200px;
+  left: 103px;
   width: 100px;
   height: 150px;
   -moz-border-radius: 50px;
@@ -121,8 +116,8 @@ body div {
 
 .handle02 {
   position: absolute;
-  top: 25px;
-  left: 25px;
+  top: 225px;
+  left: 128px;
   width: 50px;
   height: 100px;
   -moz-border-radius: 50px;
@@ -133,8 +128,8 @@ body div {
 
 .actualBeer {
   position: absolute;
-  top: -30px;
-  left: -75px;
+  top: 194px;
+  left: 54px;
   width: 100px;
   height: 180px;
   background: #F2E52E;
@@ -142,8 +137,8 @@ body div {
 
 .ridge01 {
   position: absolute;
-  top: 15px;
-  left: 14px;
+  top: 210px;
+  left: 68px;
   width: 10px;
   height: 150px;
   background: #F24182;
@@ -155,8 +150,8 @@ body div {
 
 .ridge02 {
   position: absolute;
-  top: 0px;
-  left: 20px;
+  top: 210px;
+  left: 88px;
   width: 10px;
   height: 150px;
   background: #F24182;
@@ -168,8 +163,8 @@ body div {
 
 .ridge03 {
   position: absolute;
-  top: 0px;
-  left: 20px;
+  top: 210px;
+  left: 108px;
   width: 10px;
   height: 150px;
   background: #F24182;
@@ -181,8 +176,8 @@ body div {
 
 .ridge04 {
   position: absolute;
-  top: 0px;
-  left: 20px;
+  top: 210px;
+  left: 128px;
   width: 10px;
   height: 150px;
   background: #F24182;
