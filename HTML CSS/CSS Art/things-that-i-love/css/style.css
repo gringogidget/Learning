@@ -187,12 +187,10 @@ body div {
   background: #0D8BD9;
 }
 
-.icecream {}
-
 .cone {
   position: absolute;
-  top: -45px;
-  left: 250px;
+  top: 170px;
+  left: 47px;
   width: 0;
   height: 0;
   border-left: 50px solid transparent;
@@ -202,8 +200,8 @@ body div {
 
 .iceCream01 {
   position: absolute;
-  top: -265px;
-  left: -60px;
+  top: 153px;
+  left: 37px;
   width: 120px;
   height: 35px;
   -moz-border-radius: 50px;
@@ -214,8 +212,8 @@ body div {
 
 .iceCream02 {
   position: absolute;
-  top: -25px;
-  left: 10px;
+  top: 128px;
+  left: 47px;
   width: 100px;
   height: 35px;
   -moz-border-radius: 50px;
@@ -226,8 +224,8 @@ body div {
 
 .iceCream03 {
   position: absolute;
-  top: -25px;
-  left: 10px;
+  top: 103px;
+  left: 57px;
   width: 80px;
   height: 35px;
   -moz-border-radius: 50px;
@@ -238,8 +236,8 @@ body div {
 
 .iceCream04 {
   position: absolute;
-  top: 65px;
-  left: 40px;
+  top: 170px;
+  left: 97px;
   width: 40px;
   height: 35px;
   -moz-border-radius: 50px;
@@ -250,8 +248,8 @@ body div {
 
 .cherry {
   position: absolute;
-  top: -90px;
-  left: -15px;
+  top: 76px;
+  left: 82px;
   width: 35px;
   height: 35px;
   -moz-border-radius: 50px;
