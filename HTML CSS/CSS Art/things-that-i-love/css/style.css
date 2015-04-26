@@ -1,9 +1,16 @@
-body {
+html, body {
   background-color: #000000;
 }
 
+/* Selecting all art elements on the page */
+body div {
+  display: inline-block;
+  position: relative;
+  width: 400px;
+  height: 100%;
+}
+
 .pizza {
-  position: absolute;
   top: 50px;
   left: -50px;
 }
