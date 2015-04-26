@@ -15,6 +15,7 @@ body div {
   *  would apply 50px from the right of the art item-
   *  -element (e.g. '.pizza'.)
   */
+  position: relative;
   width: 400px;
 }
 
