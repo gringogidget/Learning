@@ -37,8 +37,8 @@ body div {
 
 .cheese {
   position: absolute;
-  top: -210px;
-  left: -84px;
+  top: 140px;
+  left: 116px;
   width: 0;
   height: 0;
   border-left: 84px solid transparent;
