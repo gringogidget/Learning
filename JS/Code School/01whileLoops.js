@@ -1,7 +1,6 @@
 /* While Loops:
 
 A while loop will run until it the boolean evaluates false.
-
 This is an example of an infinite loop, it will never return false and run forever: */
 
 while(true){
