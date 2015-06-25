@@ -1,7 +1,6 @@
-/* While Loops:
-
-A while loop will run until it the boolean evaluates false.
-This is an example of an infinite loop, it will never return false and run forever: */
+// The while-loop runs its code as long as its boolean
+// expression is true.
+//	While it's true the code will execute.
 
 while(true){
 	*do this code!*
@@ -57,11 +56,11 @@ while ( trainNumber <= trainsOperational ){
 Write a basic while loop that will print to console
 the numbers 10 - 1 in descending order */
 
-var num = 10;
+var num = 10; // the variable is set to 10
 
-while (num >= 1) {
-  console.log(num);
-  num--;
+while (num >= 1) { // when the number is greater than 1
+  console.log(num); // print the num
+  num--; // decrease number by one
 }
 
 /* Exercise Question 2

@@ -1,3 +1,48 @@
+var numSheep = 4;
+var monthNumber = 1;
+var monthsToPrint = 12;
+
+while (monthNumber <= monthsToPrint) {
+
+numSheep = numSheep*4;
+
+console.log("There will be " + numSheep + " sheep after " + monthNumber + " month(s)!")
+
+monthNumber++;
+
+}
+
+// every month, the population multiplies by 4
+// print 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var currentGen = 1;
 var totalGen = 19;
 var totalMW = 0;
