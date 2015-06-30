@@ -1,4 +1,4 @@
-/* For loops have two semicolons inside that break up the for loops paramaters
+//For loops have two semicolons inside that break up the for loops paramaters
 
 for ( *initialization* ; *condition check if loop will continue *; *do this after each loop - usually
 an increment or decrement statement*) {
@@ -118,6 +118,26 @@ for (currentGen >= 5; currentGen <= totalGen; currentGen++) {
   //print console new info
   console.log("Generator #" + currentGen + " is on, adding 124 MW, for a total of " + totalMW + " MW!");
 }
+
+/******/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

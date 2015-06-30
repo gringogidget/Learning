@@ -58,7 +58,7 @@ the numbers 10 - 1 in descending order */
 
 var num = 10; // the variable is set to 10
 
-while (num >= 1) { // when the number is greater than 1
+while (num > 1) { // when the number is greater than 1
   console.log(num); // print the num
   num--; // decrease number by one
 }

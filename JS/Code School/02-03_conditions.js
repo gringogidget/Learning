@@ -30,13 +30,12 @@ var num = 10;
 while (num > 0) {
 
 //if the is divisible by 2
- if (num % 2 === 0) {
+ if (num % 2 == 0) {
 
 //print the number
 	console.log(num);
 
 //otherwise, decrement and re-run the loop
- } else {}
   num--;
 }
 
@@ -50,3 +49,13 @@ if (parkIsOpen){
 } else {
 	console.log("Sorry, the Badlands are particularly bad today. We're closed!");
 }
+
+
+
+
+
+
+
+
+
+
