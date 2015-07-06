@@ -43,15 +43,21 @@ var monthsToPrint = 12;
 
 for (var monthNumber = 1; monthNumber <= monthsToPrint; monthNumber++) {
 
-  if (monthNumber % 4)
-  	monthNumber = 
+  if (monthNumber % 4 == 0) {
+  	var sheepToRemove = numSheep * 0.75;
+  	console.log("Removing " + sheepToRemove + " sheep from the population.");
+  	numSheep = numSheep - sheepToRemove;
+}
 
-
-  else if (monthNumber > 10000)
-
+  else if (numSheep > 10000) {
+  	var sheepToRemove = numSheep * 0.5;
+  	console.log("Removing " + sheepToRemove + " sheep from the population.");
+  	numSheep = numSheep - sheepToRemove;
+}
 
   numSheep *= 4;
   console.log("There will be " + numSheep + " sheep after " + monthNumber + " month(s)!");
 }
+
 
 
