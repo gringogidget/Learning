@@ -28,5 +28,30 @@ true || true // more than enough truth value. True.
 
 (3 > 8) || (7 < 3) // true || true // true
 
+//Exercise #1
+//If the month is a multiple of 4, find 75% of the sheep population
+//Log that value to console, then remove that value from the total
+	//number of sheep.
+//Otherwise (else) if the population is above 10,000, find half
+	//the sheep population.
+//Log that value to console, then remove from the total number 
+	//of sheep.
+// Log format: Removing <number> sheep from the population.
+
+var numSheep = 4;
+var monthsToPrint = 12;
+
+for (var monthNumber = 1; monthNumber <= monthsToPrint; monthNumber++) {
+
+  if (monthNumber % 4)
+  	monthNumber = 
+
+
+  else if (monthNumber > 10000)
+
+
+  numSheep *= 4;
+  console.log("There will be " + numSheep + " sheep after " + monthNumber + " month(s)!");
+}
 
 
