@@ -78,3 +78,8 @@ while ( monthNumber <= monthsToPrint ){
   console.log("There will be " + numSheep + " sheep after " + monthNumber + " month(s)!");
   monthNumber++;
 }
+
+
+
+
+
