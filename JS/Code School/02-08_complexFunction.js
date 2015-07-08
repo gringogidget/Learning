@@ -21,7 +21,7 @@ function countE () {	//sometimes functions dont have parameters
 
 
 function countE () {
-	var phrase = prompt("Which phrase would you like to examine?");
+	var phrase = prompt("Which phrase would you like to examine?"); // popup text field
 	if ( typeof(phrase) != "string" ) {
 		alert("That's not a valid entry!");
 		return false; //instantly exits function
@@ -33,10 +33,53 @@ function countE () {
 				eCount++;
 		}
 	}
-	alert("There are " + eCount + " E's in \"" + phrase + "\".");
+	alert("There are " + eCount + " E's in \"" + phrase + "\"."); // pops up "there are _ e's"
 	return true;
 }
 
-3:00
+// Local and Global Scope:
 
-Trying to get SSH key to work on a new computer <3 
+var x = 6;		// This scope is "global", vars declared are potentially accessable
+var y = 4;		// from everywhere.
+
+function add (a, b){ 	// Inside functions, the scope is "local".
+	var x = a + b;		// Stuff that happens here, stays here.
+	return x;
+}
+
+function subtract (a, b){
+	y = a - b;
+	return y;
+}
+
+
+// Functions create a new scope
+//	Variables declared in a function stay in the function
+
+var x = 6
+function add (a, b){	//add (9, 2) = 11
+	var x = a + b;
+	return x;			//console.log(x)
+}						// answer will be 6, because it is not a part of the function.
+
+
+// Try again:
+
+var x = 6				//add (9, 2) = 11
+function add (a, b){
+	x = a + b;			//console.log(x)
+	return x;			//answer is 11 because no new var is created
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
