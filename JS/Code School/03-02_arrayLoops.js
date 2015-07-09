@@ -91,8 +91,30 @@ passengerList = addPassenger("Henry Rollins", passengerList);
 // returns: ["Shitbird Fuckface", Henry Rollins, "Glenn Danzig"]
 
 
+// Exercise #1:
 
+// Design a function named numStrings using a for loop that counts all the strings
+//	in the array parameter called list.
 
+// Inside the funciton, set up a variable to initialize it to a value of 0.
+//		(we use this variable to keep track of the number of strings).
+
+// Use a for loop to loop through the list array.
+// If the typeof current array index value is equal to "string", increment 
+//		the count variable.
+
+// Out side the foor loop, return the count variable with teh total amount
+//		of strings found.
+
+function numStrings(list) {
+  var stringCount = 0;
+  for (var i = 0; i <= list.length; i++) {
+    if (typeof(list[i]) == "string") {
+      stringCount++;
+    }
+  }
+  return stringCount;
+}
 
 
 
