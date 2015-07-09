@@ -62,6 +62,63 @@ console.log(arrayOfArrays[0][1]);
 	// [0] = comboArray1
 	// [1] = "fish"
 
+// Exercise #1:
+// In the following array, set one value of the array so it will list in order:
+var list = [1, 2, 3, 7, 5, 6, 7, 8, 9];
+
+// Answer:
+var list = [1, 2, 3, 7, 5, 6, 7, 8, 9];
+list[3] = 4;
+console.log(list);
+
+// Exercise #2:
+// Using the specific array function that adds data to the back end of the
+//	array, add the next number to your newly corrected list:
+
+var list = [1, 2, 3, 7, 5, 6, 7, 8, 9];
+list.push(10);
+console.log(list);
+
+// Exercise #3:
+// Create an array called values that contains the following contents in order:
+//	a string, a number, a boolean:
+
+var values = ["Alphabet, tango, delta", 69, true];
+
+// Exercise #4:
+//	Remove the last cell from the values variable and store the result in a
+//		variable called bool
+
+var values = ["Alphabet, tango, delta", 69, true];
+var bool = values.pop();
+
+// Exercise #5:
+// In the following setup, enter a line of code that declares a variable 
+// called infant and uses the array eightiesMovies to access the word "Baby".
+
+var movie1 = [16, "Candles"];
+var movie2 = [3, "Men", "and", "a", "Baby"];
+var eightiesMovies = [movie1, movie2];
+
+
+//Answer:
+var movie1 = [16, "Candles"];
+var movie2 = [3, "Men", "and", "a", "Baby"];
+var eightiesMovies = [movie1, movie2];
+var infant = eightiesMovies[1][4];
+
+// Exercise #6:
+// 	Alert a string with the full title of the first movie in the 
+//		eightiesMovies array, but only using the eightiesMovies variable
+//		to access the correct values
+// Use the concatenation operator to unite the words into one string,
+//		and remember to be attentive to necessary whitespace.
+
+var movie1 = [16, "Candles"];
+var movie2 = [3, "Men", "and", "a", "Baby"];
+var eightiesMovies = [movie1, movie2];
+alert(eightiesMovies[0][0] + " " + eightiesMovies[0][1]);
+
 
 
 
