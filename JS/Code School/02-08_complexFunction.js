@@ -71,12 +71,53 @@ function add (a, b){
 	return x;			//answer is 11 because no new var is created
 }
 
+// Exercise #1:
+// Build a function called feedPerRanger that takes in:
+// - the current population of sheep.
+// - the number of Park Rangers available during the day.
+//		The function should alert the amount of feed that each park
+//		ranger should be responsible for during the day.
+// 			Output like this:
+//		Each Park Ranger should load <number> lbs of feed today.
 
 
 
+function feedPerRanger (sheepPopulation, numParkRangers) {
 
+	var feed = (sheepPopulation *2) / numParkRangers;
+	alert("Each Park Ranger should load " + feed + " lbs of feed today.")
 
+}
 
+// Exercise #2:
+// Build a function named changePowerTotal that takes in four paramaters:
+// - Total power generated (numerical)
+// - Generator ID for the current generator (numerical)
+// - Generator status (a string that says "on" or "off") boolean
+// - The amount of power produced by the current generator (numerical)
+
+// This function should: 
+// - If the current generator is set to "on", add to the total power generated
+// - Or (else) if the current generator is set to "off", remove from Total
+//		Power Generated
+// - Alert the technician in the following formats:
+
+// "Generator #2 is now on, adding 62 MW, for a total of 62 MW!"
+//		and for off:
+// "Generator #2 is now off, removing 62 MW, for a total of 0 MW!"
+
+function changePowerTotal (totalPower, genID, genStatus, genPower) {
+
+	if (genStatus == "on") {
+		totalPower += genPower;
+		alert("Generator #" + genID + " is now " + genStatus + ", adding " + genPower + " MW, for a total of " + totalPower + " MW!");
+
+	} else if (genStatus == "off") { 
+		totalPower -= genPower;
+		alert("Generator #" + genID + " is now " + genStatus + ", removing " + genPower + " MW, for a total of " + totalPower + " MW!");
+	}
+	return totalPower;
+}
 
 
 
