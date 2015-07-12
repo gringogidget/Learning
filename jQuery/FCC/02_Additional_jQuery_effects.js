@@ -92,3 +92,21 @@ $(document).ready(function() {
 });
 
 
+// Exercise 9:
+// .sortable() can be used to click and drag 'ol' elements
+
+$(document).ready(function() {
+    $(function() {
+        $('ol').selectable();
+    });
+});
+
+
+// Exercise 10:
+// Add an .accordion() dropdown menu to a #menu
+
+$(document).ready(function() {
+    $(function() {
+        $('#menu').accordion();
+    });
+});
