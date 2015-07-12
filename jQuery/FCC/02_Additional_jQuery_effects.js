@@ -70,3 +70,25 @@ $(document).ready(function() {
         $("#car").draggable();
     });
 });
+
+
+// Exercise 7:
+// Call the .resizable() funciton on 'div'
+
+$(document).ready(function() {
+    $(function() {
+        $('div').resizable();
+    });
+});
+
+
+// Exercise 8:
+// Call the .selectable() function on 'ol'
+
+$(document).ready(function() {
+    $(function() {
+        $('ol').selectable();
+    });
+});
+
+
