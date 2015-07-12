@@ -77,7 +77,6 @@ $(document).ready(function() {
 });
 
 // Exercise 3:
-
 /* Make it .fadeOut() 'fast'! (Go ahead and do this immediately, without 
 the need for a click.)
 */
@@ -96,7 +95,6 @@ $(document).ready(function() {
 
 
 // Exercise 4:
-
 // create a new selector and apply a hover event to have the dev turn red 
 
 $(document).ready(function () {
@@ -109,9 +107,8 @@ $(document).ready(function () {
 });
 
 
- // Exercise 5:
-
-// Make the button change on hover and exit
+// Exercise 5:
+// Make the button colour change on hover and exit
 
 
 $(document).ready(function(){
@@ -125,4 +122,76 @@ $(document).ready(function(){
     }
   );
 
+});
+
+
+// Exercise 6:
+// Make the button colour change to red with .focus()
+
+$(document).ready(function() {
+    $('input').focus(function() {
+        $(this).css('outline-color','#FF0000');
+    });
+});
+
+
+// Exercise 7:
+// Using .animate() and .keydown(), find the first div and move ten pixels
+// to the right
+
+$(document).ready(function() {
+    $(document).keydown(function() {
+        $('div').animate({left:'+=10px'},500);
+    });
+});
+
+
+// Exercise 8:
+// Make an animated sprite move using .animate() and .keydown()
+
+// HTML:
+
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Super Mario!</title>
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+		<script type='text/javascript' src='script.js'></script>
+	</head>
+	<body>
+        <img src="http://i1061.photobucket.com/albums/t480/ericqweinstein/mario.jpg"/>
+	</body>
+</html>
+
+// CSS:
+
+img {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+// jQuery:
+
+$(document).ready(function() {
+    $(document).keydown(function(key) {
+        switch(parseInt(key.which,10)) {
+			// Left arrow key pressed
+			case 37:
+				$('img').animate({left: "-=10px"}, 'fast');
+				break;
+			// Up Arrow Pressed
+			case 38:
+				$('img').animate({top: "-=10px"}, 'fast');
+				break;
+			// Right Arrow Pressed
+			case 39:
+                $('img').animate({top: "+=10px"}, 'fast');
+				break;
+			// Down Array Pressed
+			case 40:
+				$('img').animate({top: "+=10px"}, 'fast');
+				break;
+		}
+	});
 });
