@@ -42,13 +42,24 @@ var collection = {
 var collectionCopy = JSON.parse(JSON.stringify(collection));
 
 // Only change code below this line
-function updateRecords(id, prop, value) { 
+function updateRecords(id, prop, value) {
 
-  if (value === '') { 
-    delete collection[id][prop]; 
-  } else if (prop !== 'tracks') { 
-    collection[id][prop] = value; } 
-  else { if (collection[id].hasOwnProperty('tracks') === false) { collection[id].tracks = [];   } collection[id][prop].push(value); }
-return collection; }
+  if (value === '') {
+
+    delete collection[id][prop];
+
+  } else if (prop !== 'tracks') {
+    collection[id][prop] = value;
+  } else {
+    if (collection[id].hasOwnProperty('tracks') === false) {
+      collection[id].tracks = [];
+    }
+    collection[id][prop].push(value);
+  }
+  return collection;
+}
 // Alter values below to test your code
 update(5439, "artist", "ABBA");
+
+
+
