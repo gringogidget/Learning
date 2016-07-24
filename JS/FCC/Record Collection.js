@@ -6,11 +6,8 @@ Your function must always return the entire collection object.
 
 There are several rules for handling incomplete data:
 
-If prop is "tracks" but the album doesn't have a "tracks" property, create an empty array before adding the new value to the album's corresponding property.
+*/
 
-If prop is "tracks" and value isn't empty (""), push the value onto the end of the album's existing tracks array.
-
-If value is empty (""), delete the given prop property from the album. */
 
 // Setup
 var collection = {
@@ -44,17 +41,17 @@ var collectionCopy = JSON.parse(JSON.stringify(collection));
 // Only change code below this line
 function updateRecords(id, prop, value) {
 
-  if (value === '') {
+  if (value === '') {  // If value is empty (""), delete the given prop property from the album. 
 
-    delete collection[id][prop];
+    delete collection[id][prop];  
 
-  } else if (prop !== 'tracks') {
+  } else if (prop !== 'tracks') {    //If prop is "tracks" but the album doesn't have a "tracks" property, create an empty array before adding the new value to the album's corresponding property.
     collection[id][prop] = value;
   } else {
-    if (collection[id].hasOwnProperty('tracks') === false) {
+    if (collection[id].hasOwnProperty('tracks') === false) {  //If prop is "tracks" and value isn't empty (""), push the value onto the end of the album's existing tracks array.
       collection[id].tracks = [];
     }
-    collection[id][prop].push(value);
+    collection[id][prop].push(value);  
   }
   return collection;
 }
