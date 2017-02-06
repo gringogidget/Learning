@@ -1,0 +1,19 @@
+.navbar {
+  border-radius: 4px;
+  background: #d3e3ff;
+  margin: 0px; }
+
+.navbar-nav li {
+  padding-top: 3%; }
+
+.navbar-nav a {
+  color: black;
+  font-family: "Play", sans-serif; }
+
+.navbar-nav {
+  padding-left: 23%; }
+
+.nav {
+  font-family: "Play", sans-serif; }
+
+/*# sourceMappingURL=main.css.map */
