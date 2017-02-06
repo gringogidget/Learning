@@ -11,9 +11,14 @@
   font-family: "Play", sans-serif; }
 
 .navbar-nav {
-  padding-left: 23%; }
+  padding-left: 23%;
+  background: #d3e3ff; }
 
 .nav {
-  font-family: "Play", sans-serif; }
+  font-family: "Play", sans-serif;
+  background: #f0f2ff; }
+
+footer {
+  background: #001420; }
 
 /*# sourceMappingURL=main.css.map */
