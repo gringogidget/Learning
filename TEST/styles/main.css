@@ -3,6 +3,12 @@
   background: #d3e3ff;
   margin: 0px; }
 
+/* delete lines six and seven after */
+ * @media (max-width: 768px)
+ *  background: #000 */
+.navbar #logo {
+  width: 50px; }
+
 h5, h3 {
   font-family: "Play", sans-serif;
   font-weight: 700; }
@@ -22,6 +28,10 @@ h5, h3 {
 .navbar-nav {
   padding-left: 23%;
   background: #d3e3ff; }
+  @media (max-width: 1370px) {
+    .navbar-nav {
+      padding-left: 0%;
+      display: none; } }
 
 .sidebar {
   background: #f0f2ff;
