@@ -11,11 +11,13 @@
     <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
   </head>
   <body>
+
+
     <div class="navbar">
       <div class="container">
         <div class="row">
           <div class="col-sm-2">
-            <img src="images/logo.png" class="img-responsive">
+            <img src="images/logo.png" class="img-responsive" alt="company logo of a blue truck">
           </div>
           <div class="hamburger">
             <div class="line"></div>
@@ -34,14 +36,15 @@
         </div>
       </div>
     </div>
+
+
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <img src="images/services.png" class="img-responsive">
+          <img src="images/services.png" class="img-responsive" alt="a truck driving off into the sunset">
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="row">
         <div class="col-sm-2">
@@ -79,10 +82,11 @@
       </div>
     </div>
 
+
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-sm-2">
+          <div class="col-sm-3">
             <div id="footerMenu">
               <ul class="nav footer">
                 <li><a href="#">HOME</a></li>
@@ -94,7 +98,6 @@
               <br>
             </div>
           </div>
-
           <div class="col-sm-5">
             <div id="contactUs">
               <h4 style="margin-bottom: 0px;">CONTACT US</h4>
@@ -107,7 +110,7 @@
               </p>
             </div>
           </div>
-          <div class="col-sm-5">
+          <div class="col-sm-4">
             <div id="newsletter">
               <h4 style="margin-bottom: 0px;">NEWSLETTER</h4>
               Lorem ipsum dolor sit amet, consectetur.  
@@ -125,17 +128,15 @@
     <div id="copyright">
       <div class="jumbotron text-center">Copyright &copy; All Rights Reserved</div>
     </div>
-
-<script>
-     $(document).ready(function() {
-
-      $(".hamburger").on("click",function() {
-        $(".navbar-nav").toggleClass("is-open")
-
-      })
-
-    });
-
-</script>
-
+    <script>
+      $(document).ready(function() {
+      
+       $(".hamburger").on("click",function() {
+         $(".navbar-nav").toggleClass("is-open")
+      
+       })
+      
+      });
+      
+    </script>
   </body>
