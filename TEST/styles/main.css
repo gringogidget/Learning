@@ -8,7 +8,8 @@ h5, h3 {
   font-weight: 700; }
 
 .banner {
-  padding-left: 1%; }
+  padding-left: 1%;
+  width: 100%; }
 
 .navbar-nav li {
   padding-top: 3%; }
@@ -40,16 +41,26 @@ h5, h3 {
   width: 100%; }
 
 #footerMenu {
-  padding: 35px 35px; }
+  padding: 30px 0px 15px 35px; }
 
 #contactUs {
-  width: 350px;
+  width: 110%;
   color: #f0f2ff;
   font-family: "Play", sans-serif;
-  padding: 35px 0px; }
+  padding: 35px 0px 15px 0px; }
 
-.h4 {
-  margin-bottom: 0px; }
+#newsletter {
+  width: 110%;
+  color: #f0f2ff;
+  font-family: "Play", sans-serif;
+  padding: 30px 0px 15px 70px; }
+
+.form-inline {
+  padding: 0px 0px 35px 70px;
+  font-family: "Play", sans-serif; }
+
+#inputText {
+  padding: 10px 0px; }
 
 footer {
   background: #001420; }
@@ -57,5 +68,10 @@ footer {
 footer a {
   color: #f0f2ff;
   font-family: "Play", sans-serif; }
+
+.jumbotron {
+  padding: 5px 0px;
+  margin: 0px;
+  /* Mobile */ }
 
 /*# sourceMappingURL=main.css.map */
