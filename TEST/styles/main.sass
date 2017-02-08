@@ -1,3 +1,4 @@
+
 .navbar 
  border-radius: 4px
  background: #d3e3ff
@@ -17,21 +18,23 @@ h5, h3
  padding-left: 1%
  width: 100%
 
-.navbar-nav li
- padding-top: 3%
+ @media (max-width: 1085)
+  padding-left: 0px
 
 .navbar-nav a
  color: #000
  font-family: 'Play', sans-serif
- font-weight: 400
+
+ @media (max-width: 1085)
+  font-size: 12px
 
 .navbar-nav
- padding-left: 23%
+ padding-left: 1%
  background: #d3e3ff
 
- @media (max-width: 1370px)
-  padding-left: 0%
-  display: none
+ @media (max-width: 768px)
+  padding-left: 10%
+//display: none
 
 .sidebar
  background: #f0f2ff
@@ -39,6 +42,9 @@ h5, h3
  font-weight: 700
  height: 400px
  border: none
+
+ @media (max-width: 768px)
+  display: none
 
 .sidebar a
  color: #000
@@ -53,6 +59,9 @@ h5, h3
 #footerMenu
  padding: 30px 0px 15px 35px 
 
+ @media (max-width: 768px)
+  display: none
+
 #contactUs
  width: 110%
  color: #f0f2ff
@@ -64,6 +73,9 @@ h5, h3
  color: #f0f2ff
  font-family: 'Play', sans-serif
  padding: 30px 0px 15px 70px
+
+ @media (max-width: 768px)
+  padding: 20px 0px 0px 0px 
 
 .form-inline
  padding: 0px 0px 35px 70px
@@ -83,6 +95,19 @@ footer a
  padding: 5px 0px
  margin: 0px
 
- /* Mobile */
+.hamburger
+ cursor: pointer
+ padding: 15px
+ display: inline-block
 
+ @media (min-width: 768px)
+  display: none
+
+.line
+ border-bottom: 4px solid #bbb
+ width: 35px
+ margin-bottom: 6px
+ 
+.line:last-child 
+ margin-bottom: 0px
 
