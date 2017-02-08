@@ -78,6 +78,9 @@ h5, h3 {
 .form-inline {
   padding: 0px 0px 35px 70px;
   font-family: "Play", sans-serif; }
+  @media (max-width: 768px) {
+    .form-inline {
+      padding: 0px; } }
 
 #inputText {
   padding: 10px 0px; }
