@@ -13,13 +13,6 @@ h5, h3 {
   font-family: "Play", sans-serif;
   font-weight: 700; }
 
-.banner {
-  padding-left: 1%;
-  width: 100%; }
-  @media (max-width: 1085) {
-    .banner {
-      padding-left: 0px; } }
-
 .navbar-nav a {
   color: #000;
   font-family: "Play", sans-serif; }
@@ -27,6 +20,20 @@ h5, h3 {
     .navbar-nav a {
       font-size: 12px; } }
 
+.navbar-nav {
+  height: 0;
+  opacity: 0;
+  pointer-events: none; }
+
+.navbar-nav.is-open {
+  height: auto;
+  opacity: 1;
+  pointer-events: all; }
+
+@media screen and (min-width: 768px) {
+  .navbar-nav {
+    height: auto !important;
+    opacity: 1 !important; } }
 .navbar-nav {
   padding-left: 1%;
   background: #d3e3ff; }
