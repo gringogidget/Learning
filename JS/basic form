@@ -465,7 +465,7 @@ body {
 
 <div>
   <form action="http://go.quickbooks.intuit.ca/l/43812/2017-06-07/9ssbg4" method="post" autocomplete="on">
-<input type="email" id="email" name="firstname" autofocus placeholder="%%user_email%%" required>
+<input type="email" id="email" name="firstname" autofocus placeholder="Your email address here" required>
 </li>
 <li class="flex-item">
 <div class="box2"><p>2. Select "Yes"<br> to verify</p></div>
