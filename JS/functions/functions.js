@@ -114,9 +114,11 @@ factorial(3);
 
 // 3) write a function kebabToSnake(), which takes a single kebab-cased string argument and returns the snake_cased version
 
-function kebabToSnake(changeIt) {
-  if (changeIt === "-") {
-    str.replace("-", "_");
-  }
+function kebabToSnake(str) {
+  // replace all '-' with "_"'s
+  var newStr = str.replace(/-/g , "_")
+  // return str
+  return newStr;
 }
+
 kebabToSnake("hello-world");
