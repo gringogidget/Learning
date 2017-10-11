@@ -56,8 +56,12 @@ var men = [1,2,3];
 var everyone = men.slice();
 // all names
 
+// splice will remove
+var friends = ["Picard", "Riker", "Troi", "Lizard Queen"];
+friends.splice(1, 1);
+console.log(friends);
 
-// nested array or two dimensional array 
+// nested array or two dimensional array
 var enterprise = [
   ["dianna", "beverly", "ro"],
   ["data", "geordie", "lor"],
