@@ -68,10 +68,19 @@ var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var colors = ["red", "orange", "yellow", "green"];
 
 
-numbers.forEach(function(color)) { // color is a bad name for this argument
+numbers.forEach(function(color) { // color is a bad name for this argument
   if (color % 3 === 0) {
     console.log(color);
   }
 });
 // the colors are just there to distract you.
 // it returns multiples of 3: 3, 6, 9.
+
+
+// shorter
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+numbers.forEach(function(count) {
+  if (count % 3 === 0) {
+    console.log(count);
+  }
+});
