@@ -9,7 +9,7 @@ nums.forEach(function(num){
 // returns 34, 45, 90, 24389, 23
 // it envokes the function on every element/item in the array nums
 
-var colours = ["red", "orange", "yellow", "green"];
+var colors = ["red", "orange", "yellow", "green"];
 function myForEach(arr, func) {
   // loop through array
   for (var i = 0; i < arr.length; i++) {
@@ -17,4 +17,23 @@ function myForEach(arr, func) {
   func(arr[i]);
   }
 }
-myForEach(colours, alert);
+myForEach(colors, alert);
+
+// use an annonymous function
+myForEach(colors, function(){alert("HI")})
+// the parentheses don't invoke a function, you need to add () afterwards
+
+
+// adding to an object
+Array.prototype.myForEach = funciton(func) {
+  for(var i = 0; i < this.length; i++) {
+    func(this[i]);
+  }
+}
+var friends = ["charlie", "dave", "matty", "caitlin"];
+
+friends.myForEach(alert)
+// or
+friends.myForEach(function(name)){
+  console.log("I love " + name);
+})
