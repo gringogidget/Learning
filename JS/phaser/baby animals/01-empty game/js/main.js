@@ -22,12 +22,20 @@ var GameState = {
 // to flip, you can set a negative number in scale and it will flip on X or Y
 // to rotate, use .angle, 0 is default eg, -45;
     create: function() {
+// ScaleManager.SHOW_ALL will scale the entire game responsively        
+        this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+// pageAlign horizontal and vertical will center the game        
+        this.scale.pageAlignHorizontally = true;        
+        this.scale.pageAlignVertically = true;
         this.background = this.game.add.sprite(0, 0, 'background') 
         this.alien = this.game.add.sprite (this.game.world.centerX, this.game.world.centerY, 'alien');
         this.alien.anchor.setTo(0.5);
 //        this.alien.scale.setTo(0.5); 
 //        this.alien.angle = -45;
 
+        this.rightArrow = this.game.add.sprite(580,this.game.world.centerY, 'arrow');
+        this.rightArrow.anchor.setTo(0.5);
+        this.rightArrow.customParams = {direction:1};
         
 // Always gives access to the main game object // add coordinates from top left corner // in this case places the background for you
     },
