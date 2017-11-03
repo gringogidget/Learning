@@ -1,56 +1,73 @@
-// Load the images in the preload method: this.load.image('myImage','assets/images/file.png')
-// Create a new Sprite to show the image on the screen: this.background = this.game.add.sprite(0,0, 'myImage')
-// Coordinates start on the top-left of the screen
-// Physical pixel size of game && if browser doesn't have WEBGL, it will default to canvas
-// This game is going to be a single state game a state is a JS object with a preload method where all assets are loaded once the game is loaded, the create method is called when create is called, assets can be quickly accessed
-
-var game = new Phaser.Game(640, 360, Phaser.AUTO);
+//this game will have only 1 state
 var GameState = {
-    preload: function(){
+  //load the game assets before the game starts
+  preload: function() {
+    this.game.load.image('background', 'assets/images/background.png');
+    this.game.load.image('arrow', 'assets/images/arrow.png');
+    this.game.load.image('chicken', 'assets/images/chicken.png');
+    this.game.load.image('horse', 'assets/images/horse.png');
+    this.game.load.image('alien', 'assets/images/alien.png'); // was pig in tutorial
+    this.game.load.image('sheep', 'assets/images/sheep3.png');
 
-// this, well it loads the images:
-    this.load.image('background', 'assets/images/background.png') 
-    this.load.image('alien', 'assets/images/alien.png')
-    this.load.image('mulder', 'assets/images/mulder.png') 
-    this.load.image('scully', 'assets/images/scully.png') 
-    this.load.image('skinner', 'assets/images/skinner.png') 
-    this.load.image('rightArrow', 'assets/images/rightArrow.png')     
-    },
-  
-// to center an image, anchor it with a 0.5 y and x axis 0.5, 0.5 or just 0.5 alone
-// to specify scale, use scale.setTo() < put number inside
-// you can scale an image on X and Y by specifying two numbers 
-// to flip, you can set a negative number in scale and it will flip on X or Y
-// to rotate, use .angle, 0 is default eg, -45;
-    create: function() {
-// ScaleManager.SHOW_ALL will scale the entire game responsively        
+  },
+  //executed after everything is loaded
+  create: function() {
+
+    //scaling options
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-// pageAlign horizontal and vertical will center the game        
-    this.scale.pageAlignHorizontally = true;        
+
+    //have the game centered horizontally
+    this.scale.pageAlignHorizontally = true;
     this.scale.pageAlignVertically = true;
-    this.background = this.game.add.sprite(0, 0, 'background') 
-    this.alien = this.game.add.sprite (this.game.world.centerX, this.game.world.centerY, 'alien');
+
+    //create a sprite for the background
+    this.background = this.game.add.sprite(0, 0, 'background')
+
+    this.alien = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'alien');
     this.alien.anchor.setTo(0.5);
-//      this.alien.scale.setTo(0.5); 
-//      this.alien.angle = -45;
 
-    this.rightArrow = this.game.add.sprite(580,this.game.world.centerY, 'rightArrow');
-// the arrow is way too big, scale down with scale.setTo and a decimal number        
-    this.rightArrow.scale.setTo(0.1);
+    //enable user input on sprite
+    this.alien.inputEnabled = true;
+    this.alien.input.pixelPerfectClick = true;
+    this.alien.events.onInputDown.add(this.animateAnimal, this);
+
+    //left arrow
+    this.leftArrow = this.game.add.sprite(60, this.game.world.centerY, 'arrow');
+    this.leftArrow.anchor.setTo(0.5);
+    this.leftArrow.scale.x = -1;
+    this.leftArrow.customParams = {direction: -1};
+
+    //left arrow allow user input
+    this.leftArrow.inputEnabled = true;
+    this.leftArrow.input.pixelPerfectClick = true;
+    this.leftArrow.events.onInputDown.add(this.switchAnimal, this);
+
+    //right arrow
+    this.rightArrow = this.game.add.sprite(580, this.game.world.centerY, 'arrow');
     this.rightArrow.anchor.setTo(0.5);
-    this.rightArrow.customParams = {direction:1};
-        
-// Always gives access to the main game object // add coordinates from top left corner // in this case places the background for you
-    },
+    this.rightArrow.customParams = {direction: 1};
 
-// Update is used many times per second as long as the game is going, a listener
-    update: function() { 
-//        this.alien.angle += 0.5; to rotate slowly
-    }
+    //right arrow user input
+    this.rightArrow.inputEnabled = true;
+    this.rightArrow.input.pixelPerfectClick = true;
+    this.rightArrow.events.onInputDown.add(this.switchAnimal, this);
+
+  },
+  //this is executed multiple times per second
+  update: function() {
+  },
+  switchAnimal: function(sprite, event) {
+    console.log('move animal');
+  },
+  animateAnimal: function(sprite, event) {
+    console.log('animate animal');
+  }
+
+
 };
 
-// After creating a state, you have to add it to the game
-game.state.add('GameState', GameState);
+//initiate the Phaser framework
+var game = new Phaser.Game(640, 360, Phaser.AUTO);
 
-// Launch the game
+game.state.add('GameState', GameState);
 game.state.start('GameState');
