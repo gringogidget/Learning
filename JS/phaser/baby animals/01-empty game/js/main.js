@@ -14,6 +14,7 @@ var GameState = {
     this.load.image('mulder', 'assets/images/mulder.png') 
     this.load.image('scully', 'assets/images/scully.png') 
     this.load.image('skinner', 'assets/images/skinner.png') 
+    this.load.image('rightArrow', 'assets/images/rightArrow.png')     
     },
   
 // to center an image, anchor it with a 0.5 y and x axis 0.5, 0.5 or just 0.5 alone
@@ -23,19 +24,21 @@ var GameState = {
 // to rotate, use .angle, 0 is default eg, -45;
     create: function() {
 // ScaleManager.SHOW_ALL will scale the entire game responsively        
-        this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 // pageAlign horizontal and vertical will center the game        
-        this.scale.pageAlignHorizontally = true;        
-        this.scale.pageAlignVertically = true;
-        this.background = this.game.add.sprite(0, 0, 'background') 
-        this.alien = this.game.add.sprite (this.game.world.centerX, this.game.world.centerY, 'alien');
-        this.alien.anchor.setTo(0.5);
-//        this.alien.scale.setTo(0.5); 
-//        this.alien.angle = -45;
+    this.scale.pageAlignHorizontally = true;        
+    this.scale.pageAlignVertically = true;
+    this.background = this.game.add.sprite(0, 0, 'background') 
+    this.alien = this.game.add.sprite (this.game.world.centerX, this.game.world.centerY, 'alien');
+    this.alien.anchor.setTo(0.5);
+//      this.alien.scale.setTo(0.5); 
+//      this.alien.angle = -45;
 
-        this.rightArrow = this.game.add.sprite(580,this.game.world.centerY, 'arrow');
-        this.rightArrow.anchor.setTo(0.5);
-        this.rightArrow.customParams = {direction:1};
+    this.rightArrow = this.game.add.sprite(580,this.game.world.centerY, 'rightArrow');
+// the arrow is way too big, scale down with scale.setTo and a decimal number        
+    this.rightArrow.scale.setTo(0.1);
+    this.rightArrow.anchor.setTo(0.5);
+    this.rightArrow.customParams = {direction:1};
         
 // Always gives access to the main game object // add coordinates from top left corner // in this case places the background for you
     },
