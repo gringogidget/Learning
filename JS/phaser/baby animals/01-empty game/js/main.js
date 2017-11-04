@@ -1,68 +1,159 @@
 //this game will have only 1 state
 var GameState = {
-  //load the game assets before the game starts
+//load the game assets before the game starts
   preload: function() {
-    this.game.load.image('background', 'assets/images/background.png');
-    this.game.load.image('arrow', 'assets/images/arrow.png');
-    this.game.load.image('chicken', 'assets/images/chicken.png');
-    this.game.load.image('horse', 'assets/images/horse.png');
-    this.game.load.image('alien', 'assets/images/alien.png'); // was pig in tutorial
-    this.game.load.image('sheep', 'assets/images/sheep3.png');
-
+    this.load.image('background', 'assets/images/background.png');
+    this.load.image('arrow', 'assets/images/arrow.png');
+      
+// in the sprite sheet callout, the last three numbers are height, weight, and amount of frames      
+    this.load.spritesheet('chicken', 'assets/images/chicken_spritesheet.png', 131, 200, 3);
+    this.load.spritesheet('scully', 'assets/images/scully_spritesheet.png', 212, 200, 3);
+    this.load.spritesheet('alien', 'assets/images/alien_spritesheet.png', 297, 200, 3);
+    this.load.spritesheet('sheep', 'assets/images/sheep_spritesheet.png', 244, 200, 3);
+    this.load.audio('chickenSound', ['assets/audio/chicken.ogg', 'assets/audio/chicken.mp3']);
+    this.load.audio('scullySound', ['assets/audio/scully.ogg', 'assets/audio/scully.mp3']);
+    this.load.audio('alienSound', ['assets/audio/alien.ogg', 'assets/audio/alien.mp3']);
+    this.load.audio('sheepSound', ['assets/audio/sheep.ogg', 'assets/audio/sheep.mp3']);
   },
-  //executed after everything is loaded
+//executed after everything is loaded
   create: function() {
-
-    //scaling options
+    
+//scaling options
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-
-    //have the game centered horizontally
+    
+//have the game centered horizontally
     this.scale.pageAlignHorizontally = true;
     this.scale.pageAlignVertically = true;
 
-    //create a sprite for the background
+//create a sprite for the background
     this.background = this.game.add.sprite(0, 0, 'background')
+    
+//group for animals
+    var animalData = [
+      {key: 'chicken', text: 'CHICKEN', audio: 'chickenSound'},
+      {key: 'scully', text: 'Sculder', audio: 'scullySound'},
+      {key: 'alien', text: 'Cousin Harold', audio: 'alienSound'},
+      {key: 'sheep', text: 'SHEEP', audio: 'sheepSound'}
+    ];
 
-    this.alien = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'alien');
-    this.alien.anchor.setTo(0.5);
+//create a group to store all animals
+    this.animals = this.game.add.group();
 
-    //enable user input on sprite
-    this.alien.inputEnabled = true;
-    this.alien.input.pixelPerfectClick = true;
-    this.alien.events.onInputDown.add(this.animateAnimal, this);
+    var self = this;    
+    var animal;
+    animalData.forEach(function(element){
+//create each animal and save it's properties / the number 0 represents the tween frame it starts in
+      animal = self.animals.create(-1000, self.game.world.centerY, element.key, 0);
 
-    //left arrow
+//Everything that's not Phaser-related in an object
+      animal.customParams = {text: element.text, sound: self.game.add.audio(element.audio)};
+
+//anchor point set to the center of the sprite
+      animal.anchor.setTo(0.5);
+
+//create animation iterations. the 3 represents 3 frames per second, false represents that it doesn't loop
+      animal.animations.add('animate', [0, 1, 2, 1, 0, 1], 3, false);
+
+//enable input so we can touch it
+      animal.inputEnabled = true;
+      animal.input.pixelPerfectClick = true;
+      animal.events.onInputDown.add(self.animateAnimal, self);
+    });
+
+//place first animal in the middle
+    this.currentAnimal = this.animals.next();
+    this.currentAnimal.position.set(this.game.world.centerX, this.game.world.centerY);
+
+//show animal text
+    this.showText(this.currentAnimal);
+
+//left arrow
     this.leftArrow = this.game.add.sprite(60, this.game.world.centerY, 'arrow');
     this.leftArrow.anchor.setTo(0.5);
     this.leftArrow.scale.x = -1;
     this.leftArrow.customParams = {direction: -1};
 
-    //left arrow allow user input
+//left arrow user input
     this.leftArrow.inputEnabled = true;
     this.leftArrow.input.pixelPerfectClick = true;
     this.leftArrow.events.onInputDown.add(this.switchAnimal, this);
 
-    //right arrow
+//right arrow
     this.rightArrow = this.game.add.sprite(580, this.game.world.centerY, 'arrow');
     this.rightArrow.anchor.setTo(0.5);
     this.rightArrow.customParams = {direction: 1};
 
-    //right arrow user input
+//right arrow user input
     this.rightArrow.inputEnabled = true;
     this.rightArrow.input.pixelPerfectClick = true;
-    this.rightArrow.events.onInputDown.add(this.switchAnimal, this);
+    this.rightArrow.events.onInputDown.add(this.switchAnimal, this);    
 
   },
-  //this is executed multiple times per second
+//this is executed multiple times per second
   update: function() {
+    //this.animals.addAll('angle', 2);
   },
-  switchAnimal: function(sprite, event) {
-    console.log('move animal');
-  },
+//play animal animation and sound
   animateAnimal: function(sprite, event) {
-    console.log('animate animal');
-  }
+    sprite.play('animate');
+    sprite.customParams.sound.play();
+  },
+//switch animal
+  switchAnimal: function(sprite, event) {
 
+//if an animation is taking place don't do anything
+    if(this.isMoving) {
+      return false;
+    }
+
+    this.isMoving = true;
+
+//hide text
+    this.animalText.visible = false;
+
+    var newAnimal, endX;
+//according to the arrow they pressed, which animal comes in
+    if(sprite.customParams.direction > 0) {
+      newAnimal = this.animals.next();
+      newAnimal.x = -newAnimal.width/2;
+      endX = 640 + this.currentAnimal.width/2;
+    }
+    else {
+      newAnimal = this.animals.previous();
+      newAnimal.x = 640 + newAnimal.width/2;
+      endX = -this.currentAnimal.width/2;
+    }
+
+//tween animations, moving on x
+    var newAnimalMovement = this.game.add.tween(newAnimal);
+    newAnimalMovement.to({ x: this.game.world.centerX }, 1000);
+    newAnimalMovement.onComplete.add(function()
+      {
+        this.isMoving = false;
+        this.showText(newAnimal);
+      }, this);
+    newAnimalMovement.start();
+
+    var currentAnimalMovement = this.game.add.tween(this.currentAnimal);
+    currentAnimalMovement.to({ x: endX }, 1000);
+    currentAnimalMovement.start();
+
+    this.currentAnimal = newAnimal;
+  },
+  showText: function(animal) {
+    if(!this.animalText) {
+      var style = {
+        font: '18pt helvetica',
+        fill: '#ccccf9',
+        align: 'center'
+      }
+      this.animalText = this.game.add.text(this.game.width/2, this.game.height * 0.85, '', style);
+      this.animalText.anchor.setTo(0.5);
+    }
+
+    this.animalText.setText(animal.customParams.text);
+    this.animalText.visible = true;
+  }
 
 };
 
