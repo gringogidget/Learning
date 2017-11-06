@@ -8,12 +8,13 @@ var GameState = {
 // in the sprite sheet callout, the last three numbers are height, weight, and amount of frames      
     this.load.spritesheet('chicken', 'assets/images/chicken_spritesheet.png', 131, 200, 3);
     this.load.spritesheet('scully', 'assets/images/scully_spritesheet.png', 212, 200, 3);
+    this.load.spritesheet('mulder', 'assets/images/mulder_spritesheet.png', 212, 200, 3);  
     this.load.spritesheet('alien', 'assets/images/alien_spritesheet.png', 297, 200, 3);
-    this.load.spritesheet('sheep', 'assets/images/sheep_spritesheet.png', 244, 200, 3);
     this.load.audio('chickenSound', ['assets/audio/chicken.ogg', 'assets/audio/chicken.mp3']);
     this.load.audio('scullySound', ['assets/audio/scully.ogg', 'assets/audio/scully.mp3']);
     this.load.audio('alienSound', ['assets/audio/alien.ogg', 'assets/audio/alien.mp3']);
     this.load.audio('sheepSound', ['assets/audio/sheep.ogg', 'assets/audio/sheep.mp3']);
+ 
   },
 //executed after everything is loaded
   create: function() {
@@ -30,10 +31,11 @@ var GameState = {
     
 //group for animals
     var animalData = [
-      {key: 'chicken', text: 'CHICKEN', audio: 'chickenSound'},
+      {key: 'chicken', text: '🕳️', audio: 'chickenSound'},
       {key: 'scully', text: 'Sculder', audio: 'scullySound'},
       {key: 'alien', text: 'Cousin Harold', audio: 'alienSound'},
-      {key: 'sheep', text: 'SHEEP', audio: 'sheepSound'}
+      {key: 'mulder', text: 'Muldi', audio: 'sheepSound'}
+    
     ];
 
 //create a group to store all animals
