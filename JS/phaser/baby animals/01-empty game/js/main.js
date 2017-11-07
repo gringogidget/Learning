@@ -1,4 +1,4 @@
-//this game will have only 1 state
+//this game will have only 1 state // this is a choose your character level to a game
 var GameState = {
 //load the game assets before the game starts
   preload: function() {
@@ -6,7 +6,7 @@ var GameState = {
     this.load.image('arrow', 'assets/images/arrow.png');
       
 // in the sprite sheet callout, the last three numbers are height, weight, and amount of frames      
-    this.load.spritesheet('chicken', 'assets/images/chicken_spritesheet.png', 131, 200, 3);
+    this.load.spritesheet('abduction', 'assets/images/abduction_spritesheet.png', 131, 200, 3);
     this.load.spritesheet('scully', 'assets/images/scully_spritesheet.png', 212, 200, 3);
     this.load.spritesheet('mulder', 'assets/images/mulder_spritesheet.png', 212, 200, 3);  
     this.load.spritesheet('alien', 'assets/images/alien_spritesheet.png', 297, 200, 3);
@@ -31,7 +31,7 @@ var GameState = {
     
 //group for animals
     var animalData = [
-      {key: 'chicken', text: '🕳️', audio: 'chickenSound'},
+      {key: 'abduction', text: '👽', audio: 'abductionSound'},
       {key: 'scully', text: 'Sculder', audio: 'scullySound'},
       {key: 'alien', text: 'Cousin Harold', audio: 'alienSound'},
       {key: 'mulder', text: 'Muldi', audio: 'sheepSound'}
