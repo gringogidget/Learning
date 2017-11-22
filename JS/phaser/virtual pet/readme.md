@@ -8,3 +8,7 @@
 - Modify the transparency of a sprite with the `alpha` property
 - When the user clicks on an item, we keep the selected item in a variable
 - Block the UI to make it work in the way you want
+<br><br>
+- Make the pet turn around once by adding 360 degrees
+- Add an event listener for when the animation completes
+- Block the UI to block other actions

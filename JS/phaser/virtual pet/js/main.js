@@ -59,37 +59,84 @@ var GameState = {
 
     //nothing is selected
     this.selectedItem = null;
+
+    //the user interface (UI) is not blocked at the start
     this.uiBlocked = false;
+
   },
   pickItem: function(sprite, event) {
- 
-      if(!this.uiBlocked) {
-       console.log('pick item');
     
-          this.clearSelection();
-          
-          sprite.alpha = 0.4;
-          
-          this.selectedItem = sprite;
-      }
+    //if the UI is blocked we can't pick an item
+    if(!this.uiBlocked) {
+      console.log('pick item');
+
+      this.clearSelection();
+
+      //alpha to indicate selection
+      sprite.alpha = 0.4;
+
+      this.selectedItem = sprite;
+    }
   },
   rotatePet: function(sprite, event) {
-      
-      if(!this.uiBlocked) {
-           console.log('rotating..');
-          
-          this.uiBlocked = true;
-          
-          this.clearSelection();
-          sprite.alpha = 0.4;
-      }
+
+    if(!this.uiBlocked) {     
+
+      //we want the user interface (UI) to be blocked until the rotation ends
+      this.uiBlocked = true;
+
+      this.clearSelection();
+
+      //alpha to indicate selection
+      sprite.alpha = 0.4;
+
+        var petRotation = this.game.add.tween(this.pet);
+        
+        petRotation.to({angle: '+720'}, 1000);
+        
+        petRotation.onComplete.add(function(){
+           this.uiBlocked = false;
+            
+            sprite.alpha = 1;
+            
+            this.pet.customParams.fun += 10;
+            console.log(this.pet.customParams.fun);
+        }, this);
+        
+        petRotation.start();
+        
+      var petRotation = this.game.add.tween(this.pet);
+
+      //make the pet do two loops
+      petRotation.to({angle: '+720'}, 1000);
+
+      petRotation.onComplete.add(function(){
+        //release the UI
+        this.uiBlocked = false;
+
+        sprite.alpha = 1;
+
+        //increse the fun of the pet
+        this.pet.customParams.fun += 10;
+        console.log(this.pet.customParams.fun);
+      }, this);
+
+      //start the tween animation
+      petRotation.start();
+    }
+
+    
   },
-    clearSelection: function() {
-    this.buttons.forEach(function(element, index) {
-       element.alpha = 1; 
+  clearSelection: function() {
+
+    //remove transparency from all buttons
+    this.buttons.forEach(function(element, index){
+      element.alpha = 1;
     });
-        this.selectedItem = null;
-}
+
+    //we are not selecting anything now
+    this.selectedItem = null;
+  }
 
   
 };
