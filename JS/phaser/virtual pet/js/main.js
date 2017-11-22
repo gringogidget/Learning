@@ -59,14 +59,37 @@ var GameState = {
 
     //nothing is selected
     this.selectedItem = null;
-
+    this.uiBlocked = false;
   },
   pickItem: function(sprite, event) {
-    console.log('pick item');
+ 
+      if(!this.uiBlocked) {
+       console.log('pick item');
+    
+          this.clearSelection();
+          
+          sprite.alpha = 0.4;
+          
+          this.selectedItem = sprite;
+      }
   },
   rotatePet: function(sprite, event) {
-    console.log('rotating..');
-  }
+      
+      if(!this.uiBlocked) {
+           console.log('rotating..');
+          
+          this.uiBlocked = true;
+          
+          this.clearSelection();
+          sprite.alpha = 0.4;
+      }
+  },
+    clearSelection: function() {
+    this.buttons.forEach(function(element, index) {
+       element.alpha = 1; 
+    });
+        this.selectedItem = null;
+}
 
   
 };
