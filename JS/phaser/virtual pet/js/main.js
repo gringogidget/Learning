@@ -68,6 +68,15 @@ var GameState = {
     //the user interface (UI) is not blocked at the start
     this.uiBlocked = false;
 
+    var style = {font: '20px Arial', fill: '#fff'};
+    this.game.add.text(10, 20, 'Health:', style);
+    this.game.add.text(140, 20, 'Fun:', style);
+      
+    this.healthText = this.game.add.text(80, 20, '', style);
+    this.funText = this.game.add.text(185, 20, '', style);
+      
+    this.refreshStats();
+      
   },
   pickItem: function(sprite, event) {
     
@@ -106,9 +115,12 @@ var GameState = {
 
         sprite.alpha = 1;
 
-        //increse the fun of the pet
+        //increase the fun of the pet
         this.pet.customParams.fun += 10;
-        console.log(this.pet.customParams.fun);
+        
+        // refreshes fun when you spin the monster
+        this.refreshStats();  
+          
       }, this);
 
       //start the tween animation
@@ -157,13 +169,18 @@ var GameState = {
             this.pet.customParams[stat] += newItem.customParams[stat];
         }
     }
-        
+    // update the visuals for the stats
+    this.refreshStats();
     }, this);
 
+    // start the tween animation
     petMovement.start();
-
-}
-}
+      }
+},
+    refreshStats: function(){
+        this.healthText.text = this.pet.customParams.health;
+        this.funText.text = this.pet.customParams.fun;
+    }
 };
 
 //initiate the Phaser framework
