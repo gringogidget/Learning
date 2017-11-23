@@ -35,3 +35,15 @@ this.pet.frame = 4;
 this.uiBlocked = true;
 }`
 - Restart the game `gameOver: function() {this.game.state.restart();}`
+<br><br>
+- Implement multiple states in different files // states represent main phases of your game
+- Create one file per state
+- Don't forget to include them in `index.html`
+- Add them to your Phaser game
+<br><br>
+- The `bootState` is used to prepare the `preLoadState`
+- Game-level settings are initiated in the `bootState`
+<br><br>
+- You can create as many states as you want
+- Pass values when launching a state
+- Read the passed values in the `init` method
