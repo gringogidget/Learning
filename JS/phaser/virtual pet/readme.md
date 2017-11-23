@@ -26,3 +26,12 @@
 - To add text: `this.game.add.text(10, 20, 'Health:', style);`
 - To style text: `var style = {font: '20px Arial', fill: '#fff'};` (style is called at the end)
 - Refresh stats at specific times using `this.refreshStats();`
+<br><br>
+- Implement a timer loop by decreasing the health every 5 seconds `this.statsDecreaser = this.game.time.events.loop(Phaser.Timer.SECOND * 5, this.reduceProperties, this);`
+- Implement a timed action `    
+update: function() {
+if(this.pet.customParams.health <= 0 || this.pet.customParams.fun <= 0) {
+this.pet.frame = 4;
+this.uiBlocked = true;
+}`
+- Restart the game `gameOver: function() {this.game.state.restart();}`
