@@ -21,6 +21,8 @@ var GameState = {
   //executed after everything is loaded
   create: function() {      
     this.background = this.game.add.sprite(0, 0, 'backyard');
+    this.background.inputEnabled = true;
+    this.background.events.onInputDown.add(this.placeItem, this);
 
     this.pet = this.game.add.sprite(100, 400, 'pet');
     this.pet.anchor.setTo(0.5);
@@ -90,21 +92,6 @@ var GameState = {
       //alpha to indicate selection
       sprite.alpha = 0.4;
 
-        var petRotation = this.game.add.tween(this.pet);
-        
-        petRotation.to({angle: '+720'}, 1000);
-        
-        petRotation.onComplete.add(function(){
-           this.uiBlocked = false;
-            
-            sprite.alpha = 1;
-            
-            this.pet.customParams.fun += 10;
-            console.log(this.pet.customParams.fun);
-        }, this);
-        
-        petRotation.start();
-        
       var petRotation = this.game.add.tween(this.pet);
 
       //make the pet do two loops
@@ -136,9 +123,40 @@ var GameState = {
 
     //we are not selecting anything now
     this.selectedItem = null;
-  }
+  },
+  placeItem: function(sprite, event) {
+      
+      if(this.selectedItem && !this.uiBlocked) {    
+      var x = event.position.x;
+      var y = event.position.y;
+      
+      var newItem = this.game.add.sprite(x, y, this.selectedItem.key);
+      newItem.anchor.setTo(0.5);
+      newItem.customParams = this.selectedItem.customParams;     
+          
+    this.uiBlocked = true;
+    var petMovement = this.game.add.tween(this.pet);
+    petMovement.to({x: x, y: y}, 700);
+    petMovement.onComplete.add(function(){
+    
+    newItem.destroy();
+        
+    this.uiBlocked = false;
+        
+    var stat;
+    for(stat in newItem.customParams) {
+        if(newItem.customParams.hasOwnProperty(stat)) {
+            console.log(stat);
+            this.pet.customParams[stat] += newItem.customParams[stat];
+        }
+    }
+        
+    }, this);
 
-  
+    petMovement.start();
+
+}
+}
 };
 
 //initiate the Phaser framework
@@ -146,3 +164,30 @@ var game = new Phaser.Game(360, 640, Phaser.AUTO);
 
 game.state.add('GameState', GameState);
 game.state.start('GameState');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
