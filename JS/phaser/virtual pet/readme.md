@@ -19,3 +19,6 @@
 - To unblock the ui on completion: `this.uiBlocked = false;`
 - To "destroy" the item after the sprite gets to it (eating the item), Phaser uses `newItem.destroy();`
 <br><br>
+- Take `this.pet = this.game.add.sprite(100, 400, 'pet');`. Add the number of the image in the sequence of the spritesheet to display that particular image: `this.pet = this.game.add.sprite(100, 400, 'pet', 3);`
+- To add animation, add: `this.pet.animations.add('funnyfaces', [1, 2, 3, 2, 1], 7, false)`. The numbers signify which order for the sprite to animate in, this `7` represents speed. The higher the number, the faster the tween. False signifies that the animation plays once. True would make the animation infinite.
+- Play animation when sprite gets to item and consumes/destroys it: `this.pet.animations.play('funnyfaces');`. Using the key funnyfaces
