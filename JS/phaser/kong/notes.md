@@ -47,3 +47,23 @@ this.game.physics.arcade.collide(this.player, this.ground);
 ```
 landed: function(player, ground)
 ```
+- Enable cursor keys via `init`:
+```
+this.cursors = this.game.input.keyboard.createCursorKeys(); // keyboard input
+this.RUNNING_SPEED = 180;
+this.JUMPING_SPEED = 550;
+```
+- For speed of player, gravity of jump, left key, right key, add:
+```
+    this.player.body.velocity.x = 0;
+    if(this.cursors.left.isDown) {
+    this.player.body.velocity.x = -this.RUNNING_SPEED;
+    }
+    else if(this.cursors.right.isDown) {
+    this.player.body.velocity.x = this.RUNNING_SPEED;
+    }
+      
+    if(this.cursors.up.isDown && this.player.body.touching.down) { // check player is touching ground before jump
+        this.player.body.velocity.y = -this.JUMPING_SPEED;
+    }
+```
