@@ -39,3 +39,11 @@ this.ground.body.allowGravity = false;
 this.ground.body.immovable = true;
 platform.body.immovable = true;
 ```
+- The `update: function()` is checked multiple times per second. To change how two propeties interact with each other, use the collide function. In this case, `this.player` will now collide with `this.ground`, making the player stop on the ground.
+```
+this.game.physics.arcade.collide(this.player, this.ground);
+```
+- To make sure these physics are continually being checked add
+```
+landed: function(player, ground)
+```
