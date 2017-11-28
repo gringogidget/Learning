@@ -67,3 +67,6 @@ this.JUMPING_SPEED = 550;
         this.player.body.velocity.y = -this.JUMPING_SPEED;
     }
 ```
+- Custom paramaters for the player
+```
+this.player.customParams = {};
