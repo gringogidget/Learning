@@ -55,18 +55,52 @@ this.JUMPING_SPEED = 550;
 ```
 - For speed of player, gravity of jump, left key, right key, add:
 ```
-    this.player.body.velocity.x = 0;
-    if(this.cursors.left.isDown) {
-    this.player.body.velocity.x = -this.RUNNING_SPEED;
-    }
-    else if(this.cursors.right.isDown) {
-    this.player.body.velocity.x = this.RUNNING_SPEED;
-    }
-      
-    if(this.cursors.up.isDown && this.player.body.touching.down) { // check player is touching ground before jump
-        this.player.body.velocity.y = -this.JUMPING_SPEED;
-    }
+this.player.body.velocity.x = 0;
+if(this.cursors.left.isDown) {
+this.player.body.velocity.x = -this.RUNNING_SPEED;
+}
+else if(this.cursors.right.isDown) {
+this.player.body.velocity.x = this.RUNNING_SPEED;
+}
+
+if(this.cursors.up.isDown && this.player.body.touching.down) { // check player is touching ground before jump
+this.player.body.velocity.y = -this.JUMPING_SPEED;
+}
 ```
 - Custom paramaters for the player
 ```
 this.player.customParams = {};
+```
+- Check that the player is touching the ground 
+```
+if((this.cursors.up.isDown || this.player.customParams.mustJump) && this.player.body.touching.down) {
+this.player.body.velocity.y = -this.JUMPING_SPEED;
+this.player.customParams.mustJump = false;
+```
+- Create a group for the platforms in an array, so you don't have to make an argument for each platform
+```
+var platformData = [
+{"x": 0, "y": 430},
+{"x": 45, "y": 560},
+{"x": 90, "y": 290},
+{"x": 0, "y": 140}
+];
+```
+- Enable physics for an entire group:
+`myGroup.enableBody = true;`
+
+- Set properties for this group with
+`setAll()`
+
+- Access the world object and tell it where to start
+`this.game.world.setBounds(0,0,360,700);`
+
+- Tell the camera to follow the player
+`this.game.camera.follow(this.player);`
+
+- Load the .json file
+`this.load.text('level', 'assets/data/level.json')`
+
+- Get content with `this.game.cache.getText() `
+
+- Parse data with `JSON.parse(textContent)`
