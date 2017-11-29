@@ -1,11 +1,8 @@
 - Add the bottom (dirt and rocks)
-```
-this.ground = this.add.sprite(0, 500, 'ground');
-```
-- Add a platform
-```
-var platform = this.add.sprite(0, 300, 'platform');
-```
+`this.ground = this.add.sprite(0, 500, 'ground');`
+
+- Add a platform `var platform = this.add.sprite(0, 300, 'platform');`
+
 - Create player
 ```
 this.player = this.add.sprite(100, 200, 'player', 3); // 3 is the default sprite that shows 
@@ -18,14 +15,11 @@ Enable physics on a global level (ref: https://phaser.io/examples/v2/category/ar
 ```
 this.game.physics.startSystem(Phaser.Physics.ARCADE);
 ```
-- Define gravity. The lower the number, the slower the gravity
-```
-this.game.physics.arcade.gravivty.y = 1000;
-```
+- Define gravity. The lower the number, the slower the gravity `this.game.physics.arcade.gravivty.y = 1000;`
+
 - Enable physics for a sprite
-```
-this.game.physics.arcade.enable(mySprite)
-```
+`this.game.physics.arcade.enable(mySprite)`
+
 - Enable gravity on the ground
 ```
 this.game.physics.arcade.enable(this.ground);
@@ -104,3 +98,29 @@ var platformData = [
 - Get content with `this.game.cache.getText() `
 
 - Parse data with `JSON.parse(textContent)`
+
+- Animation for walking is played on 0, 1, 2 at 6 fps / true means it will continue looping `this.player.animations.add('walking', [0, 1, 2, 1], 6, true);`
+
+- Enable the animation on the sprite depending on which button is pressed:
+```
+if(this.cursors.left.isDown || this.player.customParams.isMovingLeft) {
+this.player.body.velocity.x = -this.RUNNING_SPEED;
+this.player.scale.setTo(1, 1);
+this.player.play('walking');
+}
+```
+- Make sure the animation stops when there are no buttons pressed
+```
+else {
+this.player.animations.stop();
+this.player.frame = 3;
+```
+- Flip (mirror) the sprite on it's x axis so that it can walk to the right by using `.scale(-1, 1);`. y axis stays at 1
+```
+else if(this.cursors.right.isDown || this.player.customParams.isMovingRight) {
+this.player.body.velocity.x = this.RUNNING_SPEED;
+this.player.scale.setTo(-1, 1);
+this.player.play('walking');
+```
+- Make sure to set the scale on the animation of the other direction: `scale(1, 1);`
+
