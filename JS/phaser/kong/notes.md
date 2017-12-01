@@ -136,3 +136,18 @@ fire.animations.add('fire', [0, 1], 4, true); // play fire animation on sprite #
 fire.play('fire');
 }, 
 ```
+
+- Create setting that the fire can kill the player `killPlayer`
+```
+this.game.physics.arcade.overlap(this.player, this.fires, this.killPlayer);
+this.game.physics.arcade.overlap(this.player, this.barrels, this.killPlayer);
+this.game.physics.arcade.overlap(this.player, this.goal, this.win);
+```
+
+- Add a sprite that will end the game. A goal. You can add this on your .json file. You can also make this change into a new level or room
+```
+win: function(player, goal) {
+alert('you win!');
+game.state.start('GameState');
+},
+```
