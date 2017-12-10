@@ -1,3 +1,15 @@
+/*
+The captcha requires you to review a sequence of digits (your puzzle input) and find the sum of all digits that match the next digit in the list. The list is circular, so the digit after the last digit is the first digit in the list.
+
+For example:
+
+1122 produces a sum of 3 (1 + 2) because the first digit (1) matches the second digit and the third digit (2) matches the fourth digit.
+1111 produces 4 because each digit (all 1) matches the next.
+1234 produces 0 because no digit matches the next.
+91212129 produces 9 because the only digit that matches the next one is the last digit, 9.
+*/
+
+
 /* regex: (\w)\1+
 
 \w
@@ -20,7 +32,7 @@ let sums = 0; // start value (where you begin) NOT position
 
 for (let i = 0; i <= numbersHeck.length - 1; i++) { // let starts at 0, if it is less than or equal to the length minus 1, go to the next position
 
-  if (i === 0) {
+  if (i === 0) { // if the starting point is first number
 
     if (numbersHeck.charAt(0) === numbersHeck.charAt(numbersHeck.length - 1)) { // if first number in the string is the same as the last number
 
